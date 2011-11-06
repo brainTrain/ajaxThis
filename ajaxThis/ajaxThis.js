@@ -18,7 +18,7 @@ function ajaxThis(ajaxyz){
                 //grab html tag type to handle custom tags
                 tagTerm = selectLevel.localName;
                 //grabs all attributes of the object, handles custom attributes 
-                if(selectLevel.attributes.length == 0 && tagTerm != 'body') {
+                if(selectLevel.attributes.length == 0) {
                     //if the object you click on has no attributes, we need to give it
                     //a blank one in order for the click to register
                     var attributeS = '[class=""]';
@@ -48,7 +48,7 @@ function ajaxThis(ajaxyz){
             //build the safe selector going from body, down to the object.. 
             //and I'm attempting to allow images to be selected.  No luck so far, but the 
             //syntax output is correct
-            if(ajaxyz.localName == 'img') {
+            if(ajaxyz.localName == 'img' || tagTerm != 'body') {
                 safeSelex = "'" + safeSelex.reverse().join(' ') + "'"; 
             } else {
                 safeSelex = "'" + safeSelex.reverse().join(' ') +  ":contains(" + '"' + contains + '"' + ")'"; 
