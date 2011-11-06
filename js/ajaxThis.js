@@ -48,7 +48,7 @@ function ajaxThis(ajaxyz){
             //build the safe selector going from body, down to the object.. 
             //and I'm attempting to allow images to be selected.  No luck so far, but the 
             //syntax output is correct
-            if(ajaxyz.localName == 'img' || tagTerm != 'body') {
+            if(ajaxyz.localName == 'img' || tagTerm == 'body') {
                 safeSelex = "'" + safeSelex.reverse().join(' ') + "'"; 
             } else {
                 safeSelex = "'" + safeSelex.reverse().join(' ') +  ":contains(" + '"' + contains + '"' + ")'"; 
